@@ -92,7 +92,7 @@ let abi = [
 			},
 			{
 				"name": "",
-				"type": "address"
+				"type": "uint256"
 			}
 		],
 		"payable": false,
