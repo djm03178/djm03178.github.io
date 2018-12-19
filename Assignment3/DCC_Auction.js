@@ -371,23 +371,23 @@ function voteForProduct(productNum) {
 
     switch (productNum) {
         case 0: // iphone 7
-        DCCAuction.bid("iphone 7", $("#tb_iphone7").val());
+        DCCAuction.bid("iphone 7", $("#tb_iphone7").val(), function(e, r){});
         break;
         
         case 1: // iphone 8
-        DCCAuction.bid("iphone 8", $("#tb_iphone8").val());
+        DCCAuction.bid("iphone 8", $("#tb_iphone8").val(), function(e, r){});
         break;
         
         case 2: // iphone X
-        DCCAuction.bid("iphone X", $("#tb_iphoneX").val());
+        DCCAuction.bid("iphone X", $("#tb_iphoneX").val(), function(e, r){});
         break;
         
         case 3: // Galaxy S9
-        DCCAuction.bid("Galaxy S9", $("#tb_galaxyS9").val());
+        DCCAuction.bid("Galaxy S9", $("#tb_galaxyS9").val(), function(e, r){});
         break;
         
         case 4: // Galaxy Note 9
-        DCCAuction.bid("Galaxy Note 9", $("#tb_galaxyNote9").val());
+        DCCAuction.bid("Galaxy Note 9", $("#tb_galaxyNote9").val(), function(e, r){});
         break;
         
         case 5: // LG G7
