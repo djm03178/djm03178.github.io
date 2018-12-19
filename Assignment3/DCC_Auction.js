@@ -1,42 +1,88 @@
 let contractAddress = '0x626a4dc2b3e661e4ac242052c7d47475cb50b9d9';
 let abi = [
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [
 			{
-				"name": "itemName",
+				"name": "",
 				"type": "bytes32"
+			}
+		],
+		"name": "highestPrice",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
 			},
 			{
-				"name": "tokens",
-				"type": "uint256"
+				"name": "",
+				"type": "bytes32"
 			}
 		],
-		"name": "bid",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "buy",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
+		"name": "myBid",
+		"outputs": [
 			{
-				"name": "_tokenPrice",
+				"name": "",
 				"type": "uint256"
 			}
 		],
 		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getItems",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTokenPrice",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "tokenPrice",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -59,6 +105,15 @@ let abi = [
 		],
 		"payable": false,
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "buy",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -99,86 +154,6 @@ let abi = [
 		"constant": true,
 		"inputs": [
 			{
-				"name": "itemName",
-				"type": "bytes32"
-			}
-		],
-		"name": "getItemIndex",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getItems",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getTokenBought",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getTokenPrice",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"name": "highestPrice",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
 				"name": "",
 				"type": "uint256"
 			}
@@ -198,15 +173,11 @@ let abi = [
 		"constant": true,
 		"inputs": [
 			{
-				"name": "",
-				"type": "address"
-			},
-			{
-				"name": "",
+				"name": "itemName",
 				"type": "bytes32"
 			}
 		],
-		"name": "myBid",
+		"name": "getItemIndex",
 		"outputs": [
 			{
 				"name": "",
@@ -218,9 +189,27 @@ let abi = [
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "itemName",
+				"type": "bytes32"
+			},
+			{
+				"name": "tokens",
+				"type": "uint256"
+			}
+		],
+		"name": "bid",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"constant": true,
 		"inputs": [],
-		"name": "tokenPrice",
+		"name": "getTokenBought",
 		"outputs": [
 			{
 				"name": "",
@@ -230,6 +219,17 @@ let abi = [
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_tokenPrice",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
 	}
 ]
 
@@ -304,11 +304,14 @@ function buyTokens() {
   let price = tokensToBuy * tokenPrice;
   $("#buy-msg").html("Purchase order has been submitted. Please wait.");
 
+alert("fsdsdf");
   DCCAuction.buy({value: web3.toWei(price, 'ether'), from: web3.eth.accounts[0]}, function(v) {
     web3.eth.getBalance(DCCAuction.address, function(e, r) {
     $("#contract-balance").html(web3.fromWei(r.toString()) + " ETH");
    });
   });
+  
+  alert("sdfsdf");
 }
 
 
@@ -317,8 +320,9 @@ function voteForProduct(productNum) {
 
     switch (productNum) {
         case 0: // iphone 7
-        //alert($("#tb_iphone7").val());
-        DCCAuction.bid("iphone 7", $("#tb_iphone7").val(), function (e, r) {});
+        alert($("#tb_iphone7").val());
+        DCCAuction.bid("iphone 7", $("#tb_iphone7").val());
+        //alert("asdf");
         break;
         
         case 1: // iphone 8
@@ -341,4 +345,5 @@ function voteForProduct(productNum) {
         DCCAuction.bid("LG G7", $("#tb_LGG7").val(), function (e, r) {});
         break;
     }
+    alert("fdsa");
 }
