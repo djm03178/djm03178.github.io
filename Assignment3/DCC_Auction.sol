@@ -52,7 +52,7 @@ contract DCCAuction {
         buyers[msg.sender].tokens -= tokens;
         myBid[msg.sender][itemName] += tokens;
         if (myBid[msg.sender][itemName] > highestPrice[itemName])
-        highestPrice[itemName] = myBid[msg.sender][itemName];
+            highestPrice[itemName] = myBid[msg.sender][itemName];
     }
     
     function getItemIndex(bytes32 itemName) view public returns (uint)
@@ -76,5 +76,15 @@ contract DCCAuction {
     function getTokenBought() view public returns (uint)
     {
         return buyers[msg.sender].tokens;
+    }
+    
+    function getMyBid() view public returns (uint, uint, uint, uint, uint, uint)
+    {
+        return (myBid[msg.sender]["iphone 7"],
+        myBid[msg.sender]["iphone 8"],
+        myBid[msg.sender]["iphone X"],
+        myBid[msg.sender]["Galaxy S9"],
+        myBid[msg.sender]["Galaxy Note 9"],
+        myBid[msg.sender]["LG G7"]);
     }
 }
