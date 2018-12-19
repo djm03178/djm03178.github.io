@@ -262,11 +262,8 @@ function startApp() {
   web3.eth.getAccounts(function(e,r){
   document.getElementById('accountAddr').innerHTML = getLink(r[0]);
   accountAddress = r[0];
-  alert(accountAddress);
   getValue();
-  alert("A");
   });
-  alert("B");
   getBid();
 }
 
@@ -290,15 +287,12 @@ function getBid() {
         document.getElementById('highest_LGG7').innerHTML = r[5].toString();
     });
     DCCAuction.getMyBid(accountAddress, function(e, r) {
-        alert(accountAddress);
-        alert("D");
         document.getElementById('myself_iphone7').innerHTML = r[0].toString();
         document.getElementById('myself_iphone8').innerHTML = r[1].toString();
         document.getElementById('myself_iphoneX').innerHTML = r[2].toString();
         document.getElementById('myself_galaxyS9').innerHTML = r[3].toString();
         document.getElementById('myself_galaxyNote9').innerHTML = r[4].toString();
         document.getElementById('myself_LGG7').innerHTML = r[5].toString();
-        alert(r[6]);
     });
 }
 

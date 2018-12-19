@@ -28,10 +28,10 @@ contract DCCAuction {
     function getHighestPrice() view public returns (uint, uint, uint, uint, uint, uint)
     {
         return (highestPrice["iphone 7"],
-        highestPrice["Galaxy S9"],
         highestPrice["iphone 8"],
-        highestPrice["Galaxy Note 9"],
         highestPrice["iphone X"],
+        highestPrice["Galaxy S9"],
+        highestPrice["Galaxy Note 9"],
         highestPrice["LG G7"]);
     }
     
