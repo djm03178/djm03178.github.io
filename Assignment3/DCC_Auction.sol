@@ -35,15 +35,14 @@ contract DCCAuction {
         highestPrice["LG G7"]);
     }
     
-    function getMyBid(address addr) view public returns (uint, uint, uint, uint, uint, uint, uint)
+    function getMyBid() view public returns (uint, uint, uint, uint, uint, uint)
     {
         return (myBid[msg.sender]["iphone 7"],
         myBid[msg.sender]["iphone 8"],
         myBid[msg.sender]["iphone X"],
         myBid[msg.sender]["Galaxy S9"],
         myBid[msg.sender]["Galaxy Note 9"],
-        myBid[msg.sender]["LG G7"],
-        5);
+        myBid[msg.sender]["LG G7"]);
     }
     
     function bid(bytes32 itemName, uint tokens) public
