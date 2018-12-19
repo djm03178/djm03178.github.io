@@ -58,21 +58,12 @@ let abi = [
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "tokenPrice",
-		"outputs": [
+		"inputs": [
 			{
-				"name": "",
-				"type": "uint256"
+				"name": "addr",
+				"type": "address"
 			}
 		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "getMyBid",
 		"outputs": [
 			{
@@ -102,6 +93,20 @@ let abi = [
 			{
 				"name": "",
 				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "tokenPrice",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -290,7 +295,7 @@ function getBid() {
         document.getElementById('highest_galaxyNote9').innerHTML = r[4].toString();
         document.getElementById('highest_LGG7').innerHTML = r[5].toString();
     });
-    DCCAuction.getMyBid(function(e, r) {
+    DCCAuction.getMyBid(accountAddress, function(e, r) {
         alert(r.length);
         document.getElementById('myself_iphone7').innerHTML = r[0].toString();
         document.getElementById('myself_iphone8').innerHTML = r[1].toString();
