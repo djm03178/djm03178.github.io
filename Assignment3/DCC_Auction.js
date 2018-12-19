@@ -296,7 +296,7 @@ function getBid() {
         document.getElementById('highest_LGG7').innerHTML = r[5].toString();
     });
     DCCAuction.getMyBid(accountAddress, function(e, r) {
-        alert(r.accountAddress);
+        alert(accountAddress);
         document.getElementById('myself_iphone7').innerHTML = r[0].toString();
         document.getElementById('myself_iphone8').innerHTML = r[1].toString();
         document.getElementById('myself_iphoneX').innerHTML = r[2].toString();
