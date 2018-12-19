@@ -45,20 +45,6 @@ let abi = [
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "getItems",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "getTokenPrice",
 		"outputs": [
 			{
@@ -204,25 +190,6 @@ let abi = [
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "itemName",
-				"type": "bytes32"
-			}
-		],
-		"name": "getItemIndex",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -270,8 +237,6 @@ let abi = [
 let DCCAuctionContract;
 let DCCAuction;
 let accountAddress;
-let currentEtherBalance;
-let currentTokenBalance;
 let tokenPrice;
 
 window.addEventListener('load', function() {
@@ -322,7 +287,6 @@ function getBid() {
         document.getElementById('highest_LGG7').innerHTML = r[5].toString();
     });
     DCCAuction.getMyBid(function(e, r) {
-        alert(r[0]);
         document.getElementById('myself_iphone7').innerHTML = r[0].toString();
         document.getElementById('myself_iphone8').innerHTML = r[1].toString();
         document.getElementById('myself_iphoneX').innerHTML = r[2].toString();
