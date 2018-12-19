@@ -271,7 +271,12 @@ function startApp() {
   web3.eth.getAccounts(function(e,r){
   document.getElementById('accountAddr').innerHTML = getLink(r[0]);
   accountAddress = r[0];
+  alert("A");
+  alert(r[0]);
+  alert(accountAddress);
+  alert("B");
   getValue();
+  alert("C");
   });
 }
 
