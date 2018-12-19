@@ -294,17 +294,8 @@ function getTokenInfo() {
     tokenPrice = parseFloat(web3.fromWei(r.toString()));
     document.getElementById('token-cost').innerHTML = tokenPrice + "ETH";
   });
-  web3.eth.getBalance(simpleVote.address, function(e,v) {
+  web3.eth.getBalance(DCCAuction.address, function(e,v) {
     document.getElementById('contract-balance').innerHTML = web3.fromWei(v.toString()) + "ETH";
-  });
-}
-
-function getCandidateInfo() {
-  simpleVote.getVotesReceivedFor(function(e,r){
-    for(let i=1;i<=r.length;i++)
-    {
-      document.getElementById('day_votes_' + i).innerHTML = r[i-1].toString();
-    }
   });
 }
 
@@ -314,7 +305,7 @@ function buyTokens() {
   $("#buy-msg").html("Purchase order has been submitted. Please wait.");
 
   DCCAuction.buy({value: web3.toWei(price, 'ether'), from: web3.eth.accounts[0]}, function(v) {
-    web3.eth.getBalance(simpleVote.address, function(e, r) {
+    web3.eth.getBalance(DCCAuction.address, function(e, r) {
     $("#contract-balance").html(web3.fromWei(r.toString()) + " ETH");
    });
   });
@@ -323,29 +314,31 @@ function buyTokens() {
 
 
 function voteForProduct(productNum) {
+
     switch (productNum) {
         case 0: // iphone 7
-        DCCAuction.bid("iphone 7", $("tb_iphone7").val(), function (e, r) {});
+        //alert($("#tb_iphone7").val());
+        DCCAuction.bid("iphone 7", $("#tb_iphone7").val(), function (e, r) {});
         break;
         
         case 1: // iphone 8
-        DCCAuction.bid("iphone 8", $("tb_iphone8").val(), function (e, r) {});
+        DCCAuction.bid("iphone 8", $("#tb_iphone8").val(), function (e, r) {});
         break;
         
         case 2: // iphone X
-        DCCAuction.bid("iphone X", $("tb_iphoneX").val(), function (e, r) {});
+        DCCAuction.bid("iphone X", $("#tb_iphoneX").val(), function (e, r) {});
         break;
         
         case 3: // Galaxy S9
-        DCCAuction.bid("Galaxy S9", $("tb_galaxyS9").val(), function (e, r) {});
+        DCCAuction.bid("Galaxy S9", $("#tb_galaxyS9").val(), function (e, r) {});
         break;
         
         case 4: // Galaxy Note 9
-        DCCAuction.bid("Galaxy Note 9", $("tb_galaxyNote9").val(), function (e, r) {});
+        DCCAuction.bid("Galaxy Note 9", $("#tb_galaxyNote9").val(), function (e, r) {});
         break;
         
         case 5: // LG G7
-        DCCAuction.bid("LG G7", $("tb_LGG7").val(), function (e, r) {});
+        DCCAuction.bid("LG G7", $("#tb_LGG7").val(), function (e, r) {});
         break;
     }
 }
