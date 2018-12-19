@@ -297,8 +297,8 @@ function startApp() {
   web3.eth.getAccounts(function(e,r){
   document.getElementById('accountAddr').innerHTML = getLink(r[0]);
   accountAddress = r[0];
-  });
   getValue();
+  });
 }
 
 function getLink(addr) {
@@ -322,6 +322,7 @@ function getBid() {
         document.getElementById('highest_LGG7').innerHTML = r[5].toString();
     });
     DCCAuction.getMyBid(function(e, r) {
+        alert(r[0]);
         document.getElementById('myself_iphone7').innerHTML = r[0].toString();
         document.getElementById('myself_iphone8').innerHTML = r[1].toString();
         document.getElementById('myself_iphoneX').innerHTML = r[2].toString();
