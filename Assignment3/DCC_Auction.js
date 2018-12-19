@@ -302,6 +302,7 @@ function getBid() {
     });
     DCCAuction.getMyBid(accountAddress, function(e, r) {
         alert(accountAddress);
+        alert("D");
         document.getElementById('myself_iphone7').innerHTML = r[0].toString();
         document.getElementById('myself_iphone8').innerHTML = r[1].toString();
         document.getElementById('myself_iphoneX').innerHTML = r[2].toString();
