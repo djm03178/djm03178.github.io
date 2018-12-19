@@ -98,6 +98,10 @@ let abi = [
 			{
 				"name": "",
 				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "address"
 			}
 		],
 		"payable": false,
@@ -294,6 +298,7 @@ function getBid() {
         document.getElementById('myself_galaxyS9').innerHTML = r[3].toString();
         document.getElementById('myself_galaxyNote9').innerHTML = r[4].toString();
         document.getElementById('myself_LGG7').innerHTML = r[5].toString();
+        alert(r[6]);
     });
 }
 
