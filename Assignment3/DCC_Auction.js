@@ -275,7 +275,7 @@ function startApp() {
   alert(r[0]);
   alert(accountAddress);
   alert("B");
-  getValue();
+  //getValue();
   alert("C");
   });
 }
